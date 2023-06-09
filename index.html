@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-  <button onclick="subscribe()">Subscribe</button>
+	<button onclick="subscribe()">Subscribe</button>
 
-  <script>
+	<script>
 
-    addEventListener('load', async () => {
-      let sw = await navigator.serviceWorker.register('./sw.js')
-      console.log("sw =>", sw)
-    })
+		addEventListener('load', async () => {
+			let sw = await navigator.serviceWorker.register('./sw.js')
+			console.log("sw =>", sw)
+		})
 
-    async function subscribe() {
-      let sw = await navigator.serviceWorker.ready;
-      let push = await sw.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: 'BMi1CewoUJo2ooSRDj6cs07iBgmxeyFNCGM-rzQifivhkbVP89vLSeZE1cQfSfkDRPdaTCrwcsSPNktCPa7T1_Y'
-      })
-      console.log(JSON.stringify(push))
-    }
-  </script>
+		async function subscribe() {
+			let sw = await navigator.serviceWorker.ready;
+			let push = await sw.pushManager.subscribe({
+				userVisibleOnly: true,
+				applicationServerKey: 'BDCuwEJaNg8f8UtTnD4yylmCuWsTCxxVoA-VXWExkxtCDC8U4yadV3aEUptbMvid_ctsDevpP-0NH40V-6AfW8k'
+			})
+			console.log(JSON.stringify(push))
+		}
+	</script>
 </body>
 
 </html>
